@@ -1,0 +1,37 @@
+<?php
+	
+if(isset($_GET['id'])) {
+	$unsafeId = (int) $_GET['id'];
+	$id = mysqli_real_escape_string($conn, $unsafeId);
+	
+	$sql = "SELECT * FROM pictures WHERE picture='$id'";
+	$result = mysqli_query($conn, $sql);
+
+	
+	if (mysqli_num_rows($result) > 0) {
+		if ($row = mysqli_fetch_assoc($result)) {
+			$imgId = $row['picture'];
+			$pictureName = $row['name'];
+			$description = $row['description'];
+			$tags = $row['tags'];
+			$category = $row['category'];
+			
+			$imgId = "files/" . $imgId . ".jpg";
+			echo "<h1>$pictureName</h1>
+			<img width='50%' src='$imgId' alt='image'>
+			<br>
+			<button>Zoom</button>
+			<div>
+				<p>$description</p>
+				<p>Category: $category</p>
+				<p>Tags: $tags</p>
+			</div>";
+		} else {
+			echo "Image not available.";
+		}
+	} else {
+		echo "Image not available.";
+	}
+} else {
+	echo "Please search for an image.";
+}

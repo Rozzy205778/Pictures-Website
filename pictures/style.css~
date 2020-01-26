@@ -1,0 +1,129 @@
+a {
+	text-decoration: none;
+	color: white;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #202b2b;
+	color: white;
+}
+
+.pagebody {
+	padding: 20px;
+}
+
+nav {
+	background-color: #2e3e3e;
+	padding: 20px;
+	overflow: hidden;
+}
+
+.searchBar {
+	padding: 10px;
+}
+
+#searchBox {
+	margin-top: 10px;
+}
+
+.navLogin {
+	background-color: #243131;
+	display: block;
+	padding: 10px;
+	border-radius: 4px;
+}
+
+.pictureResults {
+	background-color: #243131;
+	padding: 10px;
+}
+
+.pictureResults:hover {
+	background-color: #2e3e3e;
+}
+
+.signup {
+	margin-bottom: 10px;
+}
+
+.categoryResults {
+	background-color: #243131;
+	padding: 10px;
+	width: 30vw;
+   height: 30vw;
+   font-size: 5vw;
+}
+
+.categoryResults:hover {
+	background-color: #2e3e3e;
+}
+
+.categoryImg {
+	width: 40vw;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+#signupError {
+	background-color: #F5B7B1;
+	color: #202b2b;
+	padding: 10px;
+}
+
+#signupSuccess {
+	background-color: #D4EFDF;
+	color: #202b2b;
+	padding: 10px;
+}
+
+#home {
+	width: 50px;
+	height: 50px;
+	padding: none;
+	float: left;
+	opacity: 0.8;
+	margin-right: 20px;
+}
+
+#home:hover {
+	opacity: 0.5;
+}
+
+@media screen and (min-width: 1000px) {
+	
+	.navLogin {
+		float: right;
+		background-color: #2e3e3e;
+	}
+	
+	.searchBar {
+		float: left;
+	}
+	
+	.searchBar {
+		padding: 0px;
+	}
+	
+	.navLogin {
+		padding: 0px;
+		border-radius: 0px;
+	}
+   
+   .categoryResults {
+		width: 15vw;
+	   height: 15vw;
+	   font-size: 2vw;
+	}
+	
+	.categoryImg {
+		width: 20vw;
+	}
+	
+	.categoryImg:hover {
+   	opacity: 0.8;
+	}
+}

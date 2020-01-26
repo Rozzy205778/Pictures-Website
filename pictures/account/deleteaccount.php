@@ -1,0 +1,14 @@
+<?php
+
+include_once "header.php";
+include_once "../login/connection.php";
+include_once "accountfunctions.php";
+
+if (isset($_SESSION['id']) && isset($_POST['deleteSubmit'])) {
+	echo "<form name='deleteForm' method='POST' action'".Account::deleteAccount($conn)."'>
+	Password: <input type='password' name='password' />
+	<button type='submit' name='deleteSubmit'>Delete Account</button>
+	</form>";
+}
+
+include_once "../important/footer.php";

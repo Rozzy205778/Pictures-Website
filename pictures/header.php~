@@ -1,0 +1,37 @@
+<?php
+	session_start();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<nav>
+		<div class="searchBar">
+			<form action="search.php" method="POST">
+				<input type=text name="searchTerm">
+				<button type="submit" name="submitSearch">Search</button>
+			</form>
+		</div>
+		
+		<div class="navLogin">
+			<?php
+				if (isset($_SESSION['username'])) {
+					echo '<form action="login/logout.php" method="POST">
+					<button type="submit" name="submit">Logout</button>
+					</form>';
+				} else {
+					echo '<form action="login/login.php" method="POST">
+					<input type="text" name="username" placeholder="Username/email">
+					<input type="password" name="password" placeholder="password">
+					<button type="submit" name="submit">Login</button>
+					</form>
+					<a href="signup.php"><button>Sign up</button></a>';
+				}
+			?>
+			
+		</div>	
+	</nav>
+
+<div class="pagebody">

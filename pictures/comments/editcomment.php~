@@ -1,0 +1,26 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION['id'])) {
+
+	date_default_timezone_set('Europe/London');
+	include '../connection.php';
+	include 'functions.php';
+
+	$id = $_POST['id'];
+	$username = $_POST['username'];
+	$date = $_POST['date'];
+	$message = $_POST['message'];
+	
+	echo "<form method='POST' action='".editComments($conn)."'>
+		<input type='hidden' name='id' value='".$id."'>
+		<input type='hidden' name='username' value='".$username."'>
+		<input type='hidden' name='date' value='".$date."'>
+		<textarea name='message'>".$message."</textarea><br>
+		<button type='submit' name='commentSubmit'>Edit</button>
+	</form>";
+	
+}
+
+?>
